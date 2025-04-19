@@ -5,10 +5,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: #1a1a1a;
+    padding-bottom: 1rem;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .search-bar input {
@@ -100,6 +109,7 @@
     visibility: visible !important;
     opacity: 1 !important;
     transition: opacity 0.3s ease;
+    padding-top: 0.5rem; /* Evitar solapamiento con sticky-header */
 }
 
 .evento-card {
@@ -116,6 +126,19 @@
     border: 2px solid #facc15;
 }
 
+.evento-card.featured .destacado {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #facc15;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    z-index: 10;
+}
+
 .evento-card.featured::after {
     content: '\f005';
     font-family: 'Font Awesome 6 Free';
@@ -125,6 +148,7 @@
     right: 0.5rem;
     color: #facc15;
     font-size: 1rem;
+    z-index: 10;
 }
 
 .evento-card::before {
@@ -186,7 +210,7 @@
 }
 
 .evento-card.featured h3 {
-    padding-top: 3.5rem; /* Espacio para el ribbon y la estrella en destacados */
+    padding-top: 3.5rem; /* Espacio para el ribbon, estrella y texto Destacado */
 }
 
 .evento-card .fecha {
@@ -255,43 +279,7 @@
     top: 3rem; /* Más abajo para no tapar título ni estrella */
 }
 
-/* Responsividad */
-@media (max-width: 640px) {
-    .eventos-container {
-        padding: 1rem;
-    }
-    .eventos-grid {
-        grid-template-columns: 1fr;
-    }
-    .modal-content {
-        max-width: 90%;
-    }
-    .modal-content .botones {
-        gap: 0.5rem;
-    }
-    .ribbon-distrito {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.4rem;
-        max-width: 90px;
-    }
-}
-
-@media (hover: hover) {
-    .evento-card:hover {
-        transform: translateY(-4px);
-    }
-    .filter-btn:hover {
-        background-color: #4b5563;
-    }
-    .modal-content .volver:hover,
-    #cerrar-modal:hover,
-    #cerrar-modal-distrito:hover,
-    #cerrar-modal-fecha:hover,
-    #cerrar-modal-categoria:hover {
-        color: #4cc2f4;
-    }
-}
-
+/* Modal de detalles */
 .evento-modal {
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -390,16 +378,52 @@
     color: #ffffff;
 }
 
-.modal-content .volver {
-    color: #00b7eb;
-    margin-bottom: 1rem;
-    display: block;
-    text-align: center;
-}
-
 #cerrar-modal,
 #cerrar-modal-distrito,
 #cerrar-modal-fecha,
 #cerrar-modal-categoria {
     transition: color 0.2s ease;
+}
+
+/* Responsividad */
+@media (max-width: 640px) {
+    .eventos-container {
+        padding: 1rem;
+    }
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        max-width: 90%;
+    }
+    .modal-content .botones {
+        gap: 0.5rem;
+    }
+    .ribbon-distrito {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+        max-width: 90px;
+    }
+    .evento-card.featured .destacado {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+    .evento-card.featured::after {
+        font-size: 0.875rem;
+    }
+}
+
+@media (hover: hover) {
+    .evento-card:hover {
+        transform: translateY(-4px);
+    }
+    .filter-btn:hover {
+        background-color: #4b5563;
+    }
+    #cerrar-modal:hover,
+    #cerrar-modal-distrito:hover,
+    #cerrar-modal-fecha:hover,
+    #cerrar-modal-categoria:hover {
+        color: #4cc2f4;
+    }
 }

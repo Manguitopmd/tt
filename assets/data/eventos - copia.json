@@ -14,6 +14,18 @@
         "featured": true
     },
     {
+        "id": 2,
+        "title": "¡Feliz Cumple Manguito!",
+        "date": "2025-05-03",
+        "district": "Pariñas",
+        "type": "Celebración",
+        "description": "Celebramos el cumple de nuestro creador con una gran fiesta en Talara. ¡No te lo pierdas!",
+        "image": "assets/images/flyer-cumple-manguito.webp",
+        "video": "https://www.youtube.com/watch?v=3JZ4pnNtyxQ",
+        "whatsapp": "https://wa.me/+51961360935",
+        "featured": true
+    },
+    {
         "id": 3,
         "title": "Feria Gastronómica Sabores de Talara",
         "date": "2025-05-10",

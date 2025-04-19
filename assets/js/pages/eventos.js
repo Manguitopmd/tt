@@ -337,6 +337,7 @@ function renderEventos() {
         const card = document.createElement("div");
         card.className = `evento-card ${evento.type.toLowerCase()} ${evento.featured ? 'featured' : ''}`;
         card.innerHTML = `
+            ${evento.featured ? '<span class="destacado">Destacado</span>' : ''}
             <div class="ribbon-distrito ribbon-${distritoClase}">${evento.district}</div>
             <h3>${evento.title || "Sin título"}</h3>
             <p class="fecha">${evento.date ? formatDate(evento.date) : "Fecha no disponible"}</p>
@@ -390,14 +391,9 @@ function mostrarDetalles(evento) {
             ${evento.tickets && evento.id === 1 ? `<a href="${evento.tickets}" target="_blank" class="btn-comprar" aria-label="Comprar servicio"><i class="fas fa-shopping-cart"></i></a>` : ""}
             ${evento.tickets && evento.id !== 1 ? `<a href="${evento.tickets}" target="_blank" class="btn-entradas" aria-label="Comprar entradas"><i class="fas fa-ticket-alt"></i></a>` : ""}
         </div>
-        <a href="#" class="volver text-cyan-500 hover:text-cyan-400 text-center block">Volver</a>
     `;
 
     cerrarModal.addEventListener("click", cerrar, { once: true });
-    const volverBtn = modalBody.querySelector(".volver");
-    if (volverBtn) {
-        volverBtn.addEventListener("click", cerrar, { once: true });
-    }
 
     function cerrar() {
         // Pausar video de YouTube si existe
