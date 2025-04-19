@@ -1,0 +1,298 @@
+/* Contenedor principal */
+.travel-tv-container {
+    min-height: 100vh;
+    width: 100%;
+    background: #1A1A1A; /* Color sólido gris oscuro */
+    padding: 0.5rem;
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Contenedor de título y descripción */
+.travel-tv-container .intro {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Título principal */
+.travel-tv-container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffd800;
+    margin: 0.5rem 0;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Descripción */
+.travel-tv-container .intro p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin: 0;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cuadrícula de videos */
+.travel-tv-container .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+/* Tarjetas de video */
+.travel-tv-container .video-card {
+    background-color: #181818;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra sin borde */
+    position: relative;
+    cursor: pointer;
+}
+
+/* Contenedor de la miniatura */
+.travel-tv-container .video-card .thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Proporción 16:9 */
+    background-color: #000;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Fallback para navegadores antiguos */
+@supports not (aspect-ratio: 16 / 9) {
+    .travel-tv-container .video-card .thumbnail-container {
+        height: 0;
+        padding-bottom: 56.25%; /* 9/16 = 56.25% */
+    }
+    .travel-tv-container .video-card .thumbnail-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Miniatura */
+.travel-tv-container .video-card .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay con color sólido */
+.travel-tv-container .video-card .thumbnail-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 183, 235, 0.3); /* Celeste semitransparente */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* Ícono de play */
+.travel-tv-container .video-card .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #FF6200; /* Borde naranja */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+.travel-tv-container .video-card .play-icon::before {
+    content: '\f04b';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #FFC107; /* Amarillo ámbar */
+    font-size: 28px;
+    margin-left: 4px;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Contenedor del iframe */
+.travel-tv-container .video-card .iframe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Proporción 16:9 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mostrar iframe cuando está activo */
+.travel-tv-container .video-card.active .iframe-container {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Iframe del video */
+.travel-tv-container .video-card iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9; /* Proporción 16:9 */
+}
+
+/* Fallback para navegadores antiguos */
+@supports not (aspect-ratio: 16 / 9) {
+    .travel-tv-container .video-card .iframe-container {
+        height: 0;
+        padding-bottom: 56.25%; /* 9/16 = 56.25% */
+    }
+    .travel-tv-container .video-card iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Ocultar miniatura cuando el iframe está activo */
+.travel-tv-container .video-card.active .thumbnail-container {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Contenedor del título y descripción */
+.travel-tv-container .video-card .p-4 {
+    padding: 0.5rem;
+    background: #181818; /* Color sólido gris oscuro */
+    border-top: 2px solid #FF6200; /* Línea naranja */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animación de deslizamiento */
+}
+
+/* Ocultar título y descripción con animación cuando está activo */
+.travel-tv-container .video-card.active .p-4 {
+    transform: translateY(100%); /* Deslizar hacia abajo */
+    opacity: 0; /* Desvanecer */
+}
+
+/* Título del video */
+.travel-tv-container .video-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.travel-tv-container .video-card h3::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #00B7EB; /* Línea celeste */
+}
+
+/* Descripción del video */
+.travel-tv-container .video-card .video-description {
+    font-size: 0.85rem;
+    color: #b9b9b8;
+    margin: 0;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Mensajes de carga o error */
+.travel-tv-container .text-gray-400 {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Texto de carga oculto para accesibilidad */
+.travel-tv-container .loading-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* Media Queries mínimas */
+@media (min-width: 768px) {
+    .travel-tv-container {
+        padding: 0.75rem;
+    }
+
+    .travel-tv-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .travel-tv-container .intro p {
+        font-size: 1rem;
+    }
+
+    .travel-tv-container .video-card .p-4 {
+        padding: 0.75rem;
+    }
+
+    .travel-tv-container .video-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .travel-tv-container .video-card .video-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilo para scrollbars */
+.travel-tv-container * {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #FF6200 #1A1A1A;
+}
+
+.travel-tv-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.travel-tv-container::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+.travel-tv-container::-webkit-scrollbar-thumb {
+    background: #FF6200;
+    border-radius: 3px;
+}

@@ -1,0 +1,112 @@
+.que-hacer-container {
+    width: 100%;
+    height: 100%;
+    background-color: #1f2937;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.que-hacer-container * {
+    box-sizing: border-box;
+}
+
+.que-hacer-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Botón superior (Restaurantes) */
+.que-hacer-container .restaurantes-btn {
+    width: 100%;
+    height: 160px;
+    background-color: #dc2626;
+    border-radius: 0;
+}
+
+.que-hacer-container .restaurantes-btn i {
+    font-size: 1.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.que-hacer-container .restaurantes-btn span {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Contenedor de botones centrales */
+.que-hacer-container .button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Botones centrales (Alojamiento, Transporte, etc.) */
+.que-hacer-container .button-grid a {
+    width: 50%;
+    height: 180px;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.que-hacer-container .button-grid .alojamiento-btn {
+    background-color: #2563eb;
+}
+
+.que-hacer-container .button-grid .transporte-btn {
+    background-color: #16a34a;
+}
+
+.que-hacer-container .button-grid .tours-btn {
+    background-color: #ca8a04;
+}
+
+.que-hacer-container .button-grid .compras-btn {
+    background-color: #9333ea;
+}
+
+.que-hacer-container .button-grid .bienestar-btn {
+    background-color: #0d9488;
+}
+
+.que-hacer-container .button-grid .cultura-btn {
+    background-color: #ea580c;
+}
+
+.que-hacer-container .button-grid a i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.que-hacer-container .button-grid a span {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Botón inferior (Servicios Útiles) */
+.que-hacer-container .servicios-btn {
+    width: 100%;
+    height: 160px;
+    background-color: #4b5563;
+    border-radius: 0;
+}
+
+.que-hacer-container .servicios-btn i {
+    font-size: 1.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.que-hacer-container .servicios-btn span {
+    font-size: 1.25rem;
+    font-weight: 700;
+}

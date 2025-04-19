@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Travel Talara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-poppins text-gray-900 overflow-x-hidden">
+    <!-- Loader -->
+    <div id="loader" class="loader fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
+        <img src="assets/img/logo.svg" alt="Cargando Travel Talara" class="loader-logo w-20 h-20">
+    </div>
+
+    <div class="top-bar fixed top-0 left-0 w-full h-14 bg-black flex items-center justify-center shadow-md z-10">
+        <button class="menu-btn absolute left-3 text-white text-2xl bg-transparent border-none" onclick="openNav()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo-section text-2xl font-lobster">
+            <span class="travel text-cyan-400">Travel</span>
+            <span class="talara text-orange-500">Talara</span>
+        </div>
+    </div>
+
+    <div class="sidenav-container fixed top-0 left-0 h-full z-20">
+        <div id="mySidenav" class="sidenav w-0 h-full bg-gray-800 shadow-lg transition-all duration-300 overflow-x-hidden">
+            <!-- El menú se cargará aquí dinámicamente desde menu.html -->
+        </div>
+    </div>
+
+    <div class="main-container mt-14 w-full min-h-[calc(100vh-3.5rem)]">
+        <div id="main" class="main-content w-full h-full"></div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        // Cargar el menú desde menu.html al iniciar
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            loader.style.display = 'flex';
+            fetch('includes/menu.html')
+                .then(response => {
+                    if (!response.ok) throw new Error(`Error al cargar menu.html: ${response.status} ${response.statusText}`);
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('mySidenav').innerHTML = data;
+                    loader.style.display = 'none';
+                    // Cargar página inicial
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const page = urlParams.get('page') || 'home';
+                    loadPage(page);
+                })
+                .catch(error => {
+                    console.error('Error al cargar el menú:', error);
+                    document.getElementById('mySidenav').innerHTML = `<p>Error al cargar el menú: ${error.message}</p>`;
+                    loader.style.display = 'none';
+                });
+        });
+
+        // Deshabilitar clic derecho
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+.eventos-container {
+    background-color: #1a1a1a;
+    min-height: calc(100vh - 3.5rem);
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    border: 1px solid #374151;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.search-bar input:focus {
+    border-color: #00b7eb;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.filter-btn {
+    background-color: #2d2d2d;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #4b5563;
+}
+
+.filter-btn i {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.filter-modal {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.filter-modal.show {
+    opacity: 1;
+}
+
+.filter-modal .modal-content {
+    transform: scale(0.8);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.filter-modal.show .modal-content {
+    transform: scale(1);
+}
+
+.filter-modal .bg-black {
+    cursor: pointer;
+}
+
+.distrito-options label,
+.fecha-options label,
+.categoria-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.distrito-options input[type="radio"],
+.fecha-options input[type="radio"],
+.categoria-options input[type="checkbox"] {
+    accent-color: #00b7eb;
+}
+
+#aplicar-distrito,
+#aplicar-fecha,
+#aplicar-categoria {
+    background-color: #00b7eb;
+    transition: background-color 0.2s ease;
+}
+
+#aplicar-distrito:hover,
+#aplicar-fecha:hover,
+#aplicar-categoria:hover {
+    background-color: #0cc4ff;
+}
+
+.eventos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease;
+}
+
+.evento-card {
+    background-color: #2d2d2d;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    position: relative;
+}
+
+.evento-card.featured {
+    border: 2px solid #facc15;
+}
+
+.evento-card.featured::after {
+    content: '\f005';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: #facc15;
+    font-size: 1rem;
+}
+
+.evento-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.evento-card.cultural::before {
+    background-color: #ffc107;
+}
+
+.evento-card.deportivo::before {
+    background-color: #00b7eb;
+}
+
+.evento-card.gastronómico::before {
+    background-color: #ff6200;
+}
+
+.evento-card.musical::before {
+    background-color: #a855f7;
+}
+
+.evento-card.festival::before {
+    background-color: #ec4899;
+}
+
+.evento-card.comercial::before {
+    background-color: #22c55e;
+}
+
+.evento-card.familiar::before {
+    background-color: #f59e0b;
+}
+
+.evento-card.celebración::before {
+    background-color: #facc15;
+}
+
+.evento-card.educativo::before {
+    background-color: #3b82f6;
+}
+
+.evento-card.hidden {
+    display: none;
+}
+
+.evento-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.evento-card.featured h3 {
+    padding-top: 3.5rem; /* Espacio para el ribbon y la estrella en destacados */
+}
+
+.evento-card .fecha {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+}
+
+.evento-card .descripcion-breve {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Ribbon para el distrito */
+.ribbon-distrito {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-bottom-right-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Colores por distrito */
+.ribbon-parinas {
+    background-color: #00b7eb; /* Cian */
+}
+
+.ribbon-mancora {
+    background-color: #2ecc71; /* Verde esmeralda */
+}
+
+.ribbon-lobitos {
+    background-color: #2980b9; /* Azul oscuro */
+}
+
+.ribbon-elalto {
+    background-color: #ff6200; /* Naranja */
+}
+
+.ribbon-losorganos {
+    background-color: #8e44ad; /* Morado */
+}
+
+.ribbon-labrea {
+    background-color: #f1c40f; /* Amarillo */
+}
+
+/* Ajustar el ribbon para no chocar con la estrella de destacados */
+.evento-card.featured .ribbon-distrito {
+    top: 3rem; /* Más abajo para no tapar título ni estrella */
+}
+
+/* Responsividad */
+@media (max-width: 640px) {
+    .eventos-container {
+        padding: 1rem;
+    }
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        max-width: 90%;
+    }
+    .modal-content .botones {
+        gap: 0.5rem;
+    }
+    .ribbon-distrito {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+        max-width: 90px;
+    }
+}
+
+@media (hover: hover) {
+    .evento-card:hover {
+        transform: translateY(-4px);
+    }
+    .filter-btn:hover {
+        background-color: #4b5563;
+    }
+    .modal-content .volver:hover,
+    #cerrar-modal:hover,
+    #cerrar-modal-distrito:hover,
+    #cerrar-modal-fecha:hover,
+    #cerrar-modal-categoria:hover {
+        color: #4cc2f4;
+    }
+}
+
+.evento-modal {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.evento-modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    transform: scale(0.8);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.evento-modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-content img,
+.modal-content iframe {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content iframe {
+    aspect-ratio: 16/9;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.modal-content .fecha {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal-content .botones {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-content .botones a {
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content .botones a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content .botones a i {
+    font-size: 1.75rem;
+}
+
+.modal-content .botones .btn-whatsapp {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+.modal-content .botones .btn-maps {
+    background-color: #00b7eb;
+    color: #ffffff;
+}
+
+.modal-content .botones .btn-entradas {
+    background-color: #ff6200;
+    color: #ffffff;
+}
+
+.modal-content .botones .btn-comprar {
+    background-color: #22c55e;
+    color: #ffffff;
+}
+
+.modal-content .volver {
+    color: #00b7eb;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+}
+
+#cerrar-modal,
+#cerrar-modal-distrito,
+#cerrar-modal-fecha,
+#cerrar-modal-categoria {
+    transition: color 0.2s ease;
+}

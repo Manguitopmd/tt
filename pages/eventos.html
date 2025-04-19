@@ -1,0 +1,161 @@
+<div class="eventos-container p-4 bg-gray-900 min-h-[calc(100vh-3.5rem)]">
+    <!-- Búsqueda -->
+    <div class="search-bar flex items-center gap-2 mb-4">
+        <input type="text" id="filtro-busqueda" list="sugerencias" class="w-full p-2 bg-gray-800 text-white rounded-md shadow-sm" placeholder="Buscar eventos..." aria-label="Buscar eventos por nombre, descripción, distrito o categoría">
+        <datalist id="sugerencias">
+            <option value="Máncora">
+            <option value="Pariñas">
+            <option value="Cultural">
+            <option value="Gastronómico">
+            <option value="Musical">
+        </datalist>
+    </div>
+
+    <!-- Botones de filtros -->
+    <div class="filter-buttons flex justify-center gap-4 mb-4">
+        <button class="filter-btn bg-gray-700 text-white p-2 rounded-md" id="filtro-distrito" aria-label="Filtrar por distrito">
+            <i class="fas fa-map-marker-alt text-xl"></i>
+        </button>
+        <button class="filter-btn bg-gray-700 text-white p-2 rounded-md" id="filtro-fecha" aria-label="Filtrar por fecha">
+            <i class="fas fa-calendar-alt text-xl"></i>
+        </button>
+        <button class="filter-btn bg-gray-700 text-white p-2 rounded-md" id="filtro-categoria" aria-label="Filtrar por categoría">
+            <i class="fas fa-tags text-xl"></i>
+        </button>
+        <button class="filter-btn bg-gray-700 text-white p-2 rounded-md" id="borrar-filtros" aria-label="Borrar todos los filtros">
+            <i class="fas fa-times-circle text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Modal de filtro por distrito -->
+    <div id="modal-distrito" class="filter-modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="modal-content bg-gray-800 rounded-lg p-6 max-w-sm w-full">
+            <button id="cerrar-modal-distrito" class="absolute top-2 right-2 text-white text-xl" aria-label="Cerrar modal">×</button>
+            <h2 class="text-white text-lg font-semibold mb-4">Filtrar por Distrito</h2>
+            <div class="distrito-options flex flex-col gap-2">
+                <label for="dist-todos" class="flex items-center gap-2 text-white">
+                    <input id="dist-todos" type="radio" name="distrito" value="todos" checked class="text-cyan-500">
+                    Todos
+                </label>
+                <label for="dist-parinas" class="flex items-center gap-2 text-white">
+                    <input id="dist-parinas" type="radio" name="distrito" value="Pariñas" class="text-cyan-500">
+                    Pariñas
+                </label>
+                <label for="dist-mancora" class="flex items-center gap-2 text-white">
+                    <input id="dist-mancora" type="radio" name="distrito" value="Máncora" class="text-cyan-500">
+                    Máncora
+                </label>
+                <label for="dist-organos" class="flex items-center gap-2 text-white">
+                    <input id="dist-organos" type="radio" name="distrito" value="Los Órganos" class="text-cyan-500">
+                    Los Órganos
+                </label>
+                <label for="dist-lobitos" class="flex items-center gap-2 text-white">
+                    <input id="dist-lobitos" type="radio" name="distrito" value="Lobitos" class="text-cyan-500">
+                    Lobitos
+                </label>
+                <label for="dist-elalto" class="flex items-center gap-2 text-white">
+                    <input id="dist-elalto" type="radio" name="distrito" value="El Alto" class="text-cyan-500">
+                    El Alto
+                </label>
+                <label for="dist-labrea" class="flex items-center gap-2 text-white">
+                    <input id="dist-labrea" type="radio" name="distrito" value="La Brea" class="text-cyan-500">
+                    La Brea
+                </label>
+            </div>
+            <button id="aplicar-distrito" class="bg-cyan-500 text-white px-4 py-2 rounded-md mt-4 w-full">Aplicar</button>
+        </div>
+    </div>
+
+    <!-- Modal de filtro por fecha -->
+    <div id="modal-fecha" class="filter-modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="modal-content bg-gray-800 rounded-lg p-6 max-w-sm w-full">
+            <button id="cerrar-modal-fecha" class="absolute top-2 right-2 text-white text-xl" aria-label="Cerrar modal">×</button>
+            <h2 class="text-white text-lg font-semibold mb-4">Filtrar por Fecha</h2>
+            <div class="fecha-options flex flex-col gap-2">
+                <label for="fecha-todos" class="flex items-center gap-2 text-white">
+                    <input id="fecha-todos" type="radio" name="fecha" value="todos" checked class="text-cyan-500">
+                    Todas las fechas
+                </label>
+                <label for="fecha-hoy" class="flex items-center gap-2 text-white">
+                    <input id="fecha-hoy" type="radio" name="fecha" value="hoy" class="text-cyan-500">
+                    Hoy
+                </label>
+                <label for="fecha-semana" class="flex items-center gap-2 text-white">
+                    <input id="fecha-semana" type="radio" name="fecha" value="semana" class="text-cyan-500">
+                    Esta semana
+                </label>
+                <label for="fecha-mes" class="flex items-center gap-2 text-white">
+                    <input id="fecha-mes" type="radio" name="fecha" value="mes" class="text-cyan-500">
+                    Este mes
+                </label>
+                <label for="fecha-custom" class="flex items-center gap-2 text-white">
+                    <input id="fecha-custom" type="radio" name="fecha" value="custom" class="text-cyan-500">
+                    Rango personalizado
+                </label>
+                <div id="rango-fecha" class="hidden flex flex-col gap-2 mt-2">
+                    <input type="date" id="fecha-inicio" class="p-2 bg-gray-700 text-white rounded-md" aria-label="Fecha de inicio">
+                    <input type="date" id="fecha-fin" class="p-2 bg-gray-700 text-white rounded-md" aria-label="Fecha de fin">
+                </div>
+            </div>
+            <button id="aplicar-fecha" class="bg-cyan-500 text-white px-4 py-2 rounded-md mt-4 w-full">Aplicar</button>
+        </div>
+    </div>
+
+    <!-- Modal de filtro por categoría -->
+    <div id="modal-categoria" class="filter-modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="modal-content bg-gray-800 rounded-lg p-6 max-w-sm w-full">
+            <button id="cerrar-modal-categoria" class="absolute top-2 right-2 text-white text-xl" aria-label="Cerrar modal">×</button>
+            <h2 class="text-white text-lg font-semibold mb-4">Filtrar por Categoría</h2>
+            <div class="categoria-options flex flex-col gap-2">
+                <label for="cat-cultural" class="flex items-center gap-2 text-white">
+                    <input id="cat-cultural" type="checkbox" name="categoria" value="Cultural" class="text-cyan-500">
+                    Cultural
+                </label>
+                <label for="cat-deportivo" class="flex items-center gap-2 text-white">
+                    <input id="cat-deportivo" type="checkbox" name="categoria" value="Deportivo" class="text-cyan-500">
+                    Deportivo
+                </label>
+                <label for="cat-gastronomico" class="flex items-center gap-2 text-white">
+                    <input id="cat-gastronomico" type="checkbox" name="categoria" value="Gastronómico" class="text-cyan-500">
+                    Gastronómico
+                </label>
+                <label for="cat-musical" class="flex items-center gap-2 text-white">
+                    <input id="cat-musical" type="checkbox" name="categoria" value="Musical" class="text-cyan-500">
+                    Musical
+                </label>
+                <label for="cat-festival" class="flex items-center gap-2 text-white">
+                    <input id="cat-festival" type="checkbox" name="categoria" value="Festival" class="text-cyan-500">
+                    Festival
+                </label>
+                <label for="cat-comercial" class="flex items-center gap-2 text-white">
+                    <input id="cat-comercial" type="checkbox" name="categoria" value="Comercial" class="text-cyan-500">
+                    Comercial
+                </label>
+                <label for="cat-familiar" class="flex items-center gap-2 text-white">
+                    <input id="cat-familiar" type="checkbox" name="categoria" value="Familiar" class="text-cyan-500">
+                    Familiar
+                </label>
+                <label for="cat-celebracion" class="flex items-center gap-2 text-white">
+                    <input id="cat-celebracion" type="checkbox" name="categoria" value="Celebración" class="text-cyan-500">
+                    Celebración
+                </label>
+                <label for="cat-educativo" class="flex items-center gap-2 text-white">
+                    <input id="cat-educativo" type="checkbox" name="categoria" value="Educativo" class="text-cyan-500">
+                    Educativo
+                </label>
+            </div>
+            <button id="aplicar-categoria" class="bg-cyan-500 text-white px-4 py-2 rounded-md mt-4 w-full">Aplicar</button>
+        </div>
+    </div>
+
+    <!-- Cuadrícula de eventos -->
+    <div id="eventos-grid" class="eventos-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-live="polite"></div>
+
+    <!-- Modal de detalles del evento -->
+    <div id="evento-modal" class="evento-modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="modal-content bg-gray-800 rounded-lg p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="cerrar-modal" class="absolute top-2 right-2 text-white text-xl" aria-label="Cerrar modal">×</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+</div>
