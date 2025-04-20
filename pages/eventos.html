@@ -149,7 +149,527 @@
     </div>
 
     <!-- Cuadrícula de eventos -->
-    <div id="eventos-grid" class="eventos-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-live="polite"></div>
+    <div id="eventos-grid" class="eventos-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-live="polite">
+        <!-- Evento 1 (Destacado) -->
+        <div class="evento-card comercial featured" 
+             data-distrito="Pariñas" 
+             data-categoria="Comercial" 
+             data-fecha="2025-04-30" 
+             data-id="1" 
+             data-title="¡Vende+ tu publicidad aquí!" 
+             data-descripcion="Publicita tu negocio en nuestra app de turismo. ¡Atrae más clientes con Vende+!" 
+             data-video="https://www.youtube.com/watch?v=7xSyl9jRpzc" 
+             data-whatsapp="https://wa.me/+51961360935"
+             data-comprar="https://www.google.com/"
+             data-premium="true">
+            <span class="destacado">Destacado</span>
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>¡Vende+ tu publicidad aquí!</h3>
+            <p class="fecha">30 de abril de 2025</p>
+            <p class="descripcion-breve">Publicita tu negocio en nuestra app de turismo. ¡Atrae más clientes con Vende+!</p>
+        </div>
+        <!-- Evento 3 -->
+        <div class="evento-card gastronómico" 
+             data-distrito="Pariñas" 
+             data-categoria="Gastronómico" 
+             data-fecha="2025-05-10" 
+             data-id="3" 
+             data-title="Feria Gastronómica Sabores de Talara" 
+             data-descripcion="Degusta ceviche, sudado y platos típicos en la Plaza de Armas con música y talleres." 
+             data-image="assets/images/flyer-sabores-talara.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Feria%20Gastronómica" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-sabores-talara">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Feria Gastronómica Sabores de Talara</h3>
+            <p class="fecha">10 de mayo de 2025</p>
+            <p class="descripcion-breve">Degusta ceviche, sudado y platos típicos en la Plaza de Armas con música y talleres.</p>
+        </div>
+        <!-- Evento 4 -->
+        <div class="evento-card educativo" 
+             data-distrito="Máncora" 
+             data-categoria="Educativo" 
+             data-fecha="2025-05-15" 
+             data-id="4" 
+             data-title="Taller de Cocina Marina" 
+             data-descripcion="Aprende a preparar ceviche y platos marinos con chefs locales en un taller práctico." 
+             data-image="assets/images/flyer-taller-ceviche.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Taller%20Cocina" 
+             data-maps="https://maps.google.com/?q=Máncora,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-taller-ceviche">
+            <div class="ribbon-distrito ribbon-mancora">Máncora</div>
+            <h3>Taller de Cocina Marina</h3>
+            <p class="fecha">15 de mayo de 2025</p>
+            <p class="descripcion-breve">Aprende a preparar ceviche y platos marinos con chefs locales en un taller práctico.</p>
+        </div>
+        <!-- Evento 5 -->
+        <div class="evento-card deportivo"
+             data-distrito="Lobitos" 
+             data-categoria="Deportivo" 
+             data-fecha="2025-05-17" 
+             data-id="5" 
+             data-title="Carrera de Motos Lobitos Extremo" 
+             data-descripcion="Competencia de motos en la costa de Lobitos. Velocidad, adrenalina y premios." 
+             data-image="assets/images/flyer-motos-lobitos.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Carrera%20Motos"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Lobitos,Talara,Peru">
+            <div class="ribbon-distrito ribbon-lobitos">Lobitos</div>
+            <h3>Carrera de Motos Lobitos Extremo</h3>
+            <p class="fecha">17 de mayo de 2025</p>
+            <p class="descripcion-breve">Competencia de motos en la costa de Lobitos. Velocidad, adrenalina y premios.</p>
+        </div>
+        <!-- Evento 6 -->
+        <div class="evento-card cultural" 
+             data-distrito="Máncora" 
+             data-categoria="Cultural" 
+             data-fecha="2025-06-07" 
+             data-id="6" 
+             data-title="Noche de Cine en la Playa" 
+             data-descripcion="Proyección de películas bajo las estrellas en Máncora. Trae tu manta y disfruta." 
+             data-image="assets/images/flyer-cine-playa.webp" 
+             data-video="https://www.youtube.com/watch?v=kJQP7kiw5Fk" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Cine%20Playa"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Máncora,Talara,Peru">
+            <div class="ribbon-distrito ribbon-mancora">Máncora</div>
+            <h3>Noche de Cine en la Playa</h3>
+            <p class="fecha">7 de junio de 2025</p>
+            <p class="descripcion-breve">Proyección de películas bajo las estrellas en Máncora. Trae tu manta y disfruta.</p>
+        </div>
+        <!-- Evento 7 -->
+        <div class="evento-card cultural" 
+             data-distrito="El Alto" 
+             data-categoria="Cultural" 
+             data-fecha="2025-06-21" 
+             data-id="7" 
+             data-title="Festival de la Marinera" 
+             data-descripcion="Concurso de marinera norteña en El Alto con parejas y música en vivo." 
+             data-image="assets/images/flyer-marinera-elalto.webp" 
+             data-video="https://www.youtube.com/watch?v=9bZkp7q19f0" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Festival%20Marinera" 
+             data-maps="https://maps.google.com/?q=El%20Alto,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-marinera">
+            <div class="ribbon-distrito ribbon-elalto">El Alto</div>
+            <h3>Festival de la Marinera</h3>
+            <p class="fecha">21 de junio de 2025</p>
+            <p class="descripcion-breve">Concurso de marinera norteña en El Alto con parejas y música en vivo.</p>
+        </div>
+        <!-- Evento 8 -->
+        <div class="evento-card comercial" 
+             data-distrito="La Brea" 
+             data-categoria="Comercial" 
+             data-fecha="2025-07-05" 
+             data-id="8" 
+             data-title="Feria Artesanal de La Brea" 
+             data-descripcion="Exhibición y venta de cerámicas, tejidos y joyería en el Mercado Central de La Brea." 
+             data-image="assets/images/flyer-artesania-labrea.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Feria%20Artesanal"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=La%20Brea,Talara,Peru">
+            <div class="ribbon-distrito ribbon-labrea">La Brea</div>
+            <h3>Feria Artesanal de La Brea</h3>
+            <p class="fecha">5 de julio de 2025</p>
+            <p class="descripcion-breve">Exhibición y venta de cerámicas, tejidos y joyería en el Mercado Central de La Brea.</p>
+        </div>
+        <!-- Evento 9 -->
+        <div class="evento-card deportivo" 
+             data-distrito="Los Órganos" 
+             data-categoria="Deportivo" 
+             data-fecha="2025-07-19" 
+             data-id="9" 
+             data-title="Torneo de Surf Los Órganos" 
+             data-descripcion="Competencia de surf con los mejores riders en la playa de Los Órganos." 
+             data-image="assets/images/flyer-surf-organos.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Torneo%20Surf" 
+             data-maps="https://maps.google.com/?q=Los%20Órganos,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-surf">
+            <div class="ribbon-distrito ribbon-losorganos">Los Órganos</div>
+            <h3>Torneo de Surf Los Órganos</h3>
+            <p class="fecha">19 de julio de 2025</p>
+            <p class="descripcion-breve">Competencia de surf con los mejores riders en la playa de Los Órganos.</p>
+        </div>
+        <!-- Evento 10 -->
+        <div class="evento-card musical" 
+             data-distrito="Pariñas" 
+             data-categoria="Musical" 
+             data-fecha="2025-07-26" 
+             data-id="10" 
+             data-title="Concierto de Cumbia Pariñas" 
+             data-descripcion="Noche de cumbia rebajada y clásica con bandas locales en la Plaza de Armas." 
+             data-image="assets/images/flyer-cumbia-parinas.webp" 
+             data-video="https://www.youtube.com/watch?v=3T1c7GkzRQQ" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Concierto%20Cumbia" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-cumbia">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Concierto de Cumbia Pariñas</h3>
+            <p class="fecha">26 de julio de 2025</p>
+            <p class="descripcion-breve">Noche de cumbia rebajada y clásica con bandas locales en la Plaza de Armas.</p>
+        </div>
+        <!-- Evento 11 -->
+        <div class="evento-card gastronómico" 
+             data-distrito="Máncora" 
+             data-categoria="Gastronómico" 
+             data-fecha="2025-08-02" 
+             data-id="11" 
+             data-title="Festival del Ceviche" 
+             data-descripcion="Degusta ceviches variados en el Malecón de Máncora con talleres y música." 
+             data-image="assets/images/flyer-ceviche-mancora.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Festival%20Ceviche"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Máncora,Talara,Peru">
+            <div class="ribbon-distrito ribbon-mancora">Máncora</div>
+            <h3>Festival del Ceviche</h3>
+            <p class="fecha">2 de agosto de 2025</p>
+            <p class="descripcion-breve">Degusta ceviches variados en el Malecón de Máncora con talleres y música.</p>
+        </div>
+        <!-- Evento 12 -->
+        <div class="evento-card educativo" 
+             data-distrito="Pariñas" 
+             data-categoria="Educativo" 
+             data-fecha="2025-08-09" 
+             data-id="12" 
+             data-title="Taller de Historia de Talara" 
+             data-descripcion="Charla sobre la historia petrolera y cultural de Talara en el Museo de Pariñas." 
+             data-image="assets/images/flyer-historia-talara.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Taller%20Historia" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-historia">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Taller de Historia de Talara</h3>
+            <p class="fecha">9 de agosto de 2025</p>
+            <p class="descripcion-breve">Charla sobre la historia petrolera y cultural de Talara en el Museo de Pariñas.</p>
+        </div>
+        <!-- Evento 13 -->
+        <div class="evento-card cultural" 
+             data-distrito="Pariñas" 
+             data-categoria="Cultural" 
+             data-fecha="2025-08-16" 
+             data-id="13" 
+             data-title="Noche de Talentos Pariñas" 
+             data-descripcion="Concurso de canto, baile y más en el Teatro Municipal de Pariñas." 
+             data-image="assets/images/flyer-talentos-parinas.webp" 
+             data-video="https://www.youtube.com/watch?v=2Vv-BfVoq4g" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Noche%20Talentos" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-talentos">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Noche de Talentos Pariñas</h3>
+            <p class="fecha">16 de agosto de 2025</p>
+            <p class="descripcion-breve">Concurso de canto, baile y más en el Teatro Municipal de Pariñas.</p>
+        </div>
+        <!-- Evento 14 -->
+        <div class="evento-card deportivo" 
+             data-distrito="El Alto" 
+             data-categoria="Deportivo" 
+             data-fecha="2025-09-06" 
+             data-id="14" 
+             data-title="Carrera 5K El Alto" 
+             data-descripcion="Corre 5 km por las calles de El Alto. Premios y medallas para todos." 
+             data-image="assets/images/flyer-carrera-elalto.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Carrera%205K" 
+             data-maps="https://maps.google.com/?q=El%20Alto,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-carrera">
+            <div class="ribbon-distrito ribbon-elalto">El Alto</div>
+            <h3>Carrera 5K El Alto</h3>
+            <p class="fecha">6 de septiembre de 2025</p>
+            <p class="descripcion-breve">Corre 5 km por las calles de El Alto. Premios y medallas para todos.</p>
+        </div>
+        <!-- Evento 15 -->
+        <div class="evento-card comercial" 
+             data-distrito="Lobitos" 
+             data-categoria="Comercial" 
+             data-fecha="2025-09-13" 
+             data-id="15" 
+             data-title="Feria del Emprendedor" 
+             data-descripcion="Emprendedores presentan productos y servicios en Lobitos con charlas y networking." 
+             data-image="assets/images/flyer-emprendedor-lobitos.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Feria%20Emprendedor"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Lobitos,Talara,Peru">
+            <div class="ribbon-distrito ribbon-lobitos">Lobitos</div>
+            <h3>Feria del Emprendedor</h3>
+            <p class="fecha">13 de septiembre de 2025</p>
+            <p class="descripcion-breve">Emprendedores presentan productos y servicios en Lobitos con charlas y networking.</p>
+        </div>
+        <!-- Evento 16 -->
+        <div class="evento-card familiar" 
+             data-distrito="Los Órganos" 
+             data-categoria="Familiar" 
+             data-fecha="2025-09-20" 
+             data-id="16" 
+             data-title="Festival de Cometas" 
+             data-descripcion="Eleva tu cometa en Los Órganos en un día de color y diversión para niños." 
+             data-image="assets/images/flyer-cometas-organos.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Festival%20Cometas"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Los%20Órganos,Talara,Peru">
+            <div class="ribbon-distrito ribbon-losorganos">Los Órganos</div>
+            <h3>Festival de Cometas</h3>
+            <p class="fecha">20 de septiembre de 2025</p>
+            <p class="descripcion-breve">Eleva tu cometa en Los Órganos en un día de color y diversión para niños.</p>
+        </div>
+        <!-- Evento 17 -->
+        <div class="evento-card musical" 
+             data-distrito="La Brea" 
+             data-categoria="Musical" 
+             data-fecha="2025-10-04" 
+             data-id="17" 
+             data-title="Noche de Salsa en La Brea" 
+             data-descripcion="Baila salsa con orquesta en vivo en La Brea. Clases gratuitas para principiantes." 
+             data-image="assets/images/flyer-salsa-labrea.webp" 
+             data-video="https://www.youtube.com/watch?v=5o3vAdrH8lQ" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Noche%20Salsa" 
+             data-maps="https://maps.google.com/?q=La%20Brea,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-salsa">
+            <div class="ribbon-distrito ribbon-labrea">La Brea</div>
+            <h3>Noche de Salsa en La Brea</h3>
+            <p class="fecha">4 de octubre de 2025</p>
+            <p class="descripcion-breve">Baila salsa con orquesta en vivo en La Brea. Clases gratuitas para principiantes.</p>
+        </div>
+        <!-- Evento 18 -->
+        <div class="evento-card educativo" 
+             data-distrito="La Brea" 
+             data-categoria="Educativo" 
+             data-fecha="2025-10-11" 
+             data-id="18" 
+             data-title="Taller de Artesanía Local" 
+             data-descripcion="Aprende a crear cerámicas y tejidos tradicionales en un taller en La Brea." 
+             data-image="assets/images/flyer-artesania-taller.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Taller%20Artesanía" 
+             data-maps="https://maps.google.com/?q=La%20Brea,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-artesania">
+            <div class="ribbon-distrito ribbon-labrea">La Brea</div>
+            <h3>Taller de Artesanía Local</h3>
+            <p class="fecha">11 de octubre de 2025</p>
+            <p class="descripcion-breve">Aprende a crear cerámicas y tejidos tradicionales en un taller en La Brea.</p>
+        </div>
+        <!-- Evento 19 -->
+        <div class="evento-card gastronómico" 
+             data-distrito="Máncora" 
+             data-categoria="Gastronómico" 
+             data-fecha="2025-10-18" 
+             data-id="19" 
+             data-title="Feria del Pescado" 
+             data-descripcion="Celebra la pesca local con mariscos frescos en el Puerto de Máncora." 
+             data-image="assets/images/flyer-pescado-mancora.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Feria%20Pescado"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Máncora,Talara,Peru">
+            <div class="ribbon-distrito ribbon-mancora">Máncora</div>
+            <h3>Feria del Pescado</h3>
+            <p class="fecha">18 de octubre de 2025</p>
+            <p class="descripcion-breve">Celebra la pesca local con mariscos frescos en el Puerto de Máncora.</p>
+        </div>
+        <!-- Evento 20 -->
+        <div class="evento-card deportivo" 
+             data-distrito="Pariñas" 
+             data-categoria="Deportivo" 
+             data-fecha="2025-10-25" 
+             data-id="20" 
+             data-title="Campeonato de Fútbol Pariñas" 
+             data-descripcion="Torneo de fútbol con equipos de la provincia en el Estadio Municipal." 
+             data-image="assets/images/flyer-futbol-parinas.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Campeonato%20Fútbol"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Campeonato de Fútbol Pariñas</h3>
+            <p class="fecha">25 de octubre de 2025</p>
+            <p class="descripcion-breve">Torneo de fútbol con equipos de la provincia en el Estadio Municipal.</p>
+        </div>
+        <!-- Evento 21 -->
+        <div class="evento-card musical" 
+             data-distrito="El Alto" 
+             data-categoria="Musical" 
+             data-fecha="2025-11-01" 
+             data-id="21" 
+             data-title="Festival de la Cumbia" 
+             data-descripcion="Concierto de cumbia rebajada y clásica en El Alto con bandas y comida." 
+             data-image="assets/images/flyer-cumbia-elalto.webp" 
+             data-video="https://www.youtube.com/watch?v=3T1c7GkzRQQ" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Festival%20Cumbia" 
+             data-maps="https://maps.google.com/?q=El%20Alto,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-cumbia">
+            <div class="ribbon-distrito ribbon-elalto">El Alto</div>
+            <h3>Festival de la Cumbia</h3>
+            <p class="fecha">1 de noviembre de 2025</p>
+            <p class="descripcion-breve">Concierto de cumbia rebajada y clásica en El Alto con bandas y comida.</p>
+        </div>
+        <!-- Evento 22 -->
+        <div class="evento-card educativo" 
+             data-distrito="Los Órganos" 
+             data-categoria="Educativo" 
+             data-fecha="2025-11-08" 
+             data-id="22" 
+             data-title="Taller de Ecología Marina" 
+             data-descripcion="Charla sobre conservación de mares en la playa de Los Órganos." 
+             data-image="assets/images/flyer-ecologia-marina.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Taller%20Ecología" 
+             data-maps="https://maps.google.com/?q=Los%20Órganos,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-ecologia">
+            <div class="ribbon-distrito ribbon-losorganos">Los Órganos</div>
+            <h3>Taller de Ecología Marina</h3>
+            <p class="fecha">8 de noviembre de 2025</p>
+            <p class="descripcion-breve">Charla sobre conservación de mares en la playa de Los Órganos.</p>
+        </div>
+        <!-- Evento 23 -->
+        <div class="evento-card comercial" 
+             data-distrito="Lobitos" 
+             data-categoria="Comercial" 
+             data-fecha="2025-11-15" 
+             data-id="23" 
+             data-title="Mercado Navideño Lobitos" 
+             data-descripcion="Compra regalos, decoraciones y dulces en el mercado festivo de Lobitos." 
+             data-image="assets/images/flyer-navidad-lobitos.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Mercado%20Navideño"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Lobitos,Talara,Peru">
+            <div class="ribbon-distrito ribbon-lobitos">Lobitos</div>
+            <h3>Mercado Navideño Lobitos</h3>
+            <p class="fecha">15 de noviembre de 2025</p>
+            <p class="descripcion-breve">Compra regalos, decoraciones y dulces en el mercado festivo de Lobitos.</p>
+        </div>
+        <!-- Evento 24 -->
+        <div class="evento-card familiar" 
+             data-distrito="El Alto" 
+             data-categoria="Familiar" 
+             data-fecha="2025-11-22" 
+             data-id="24" 
+             data-title="Día de Juegos Familiares" 
+             data-descripcion="Juegos tradicionales y actividades para niños y adultos en El Alto." 
+             data-image="assets/images/flyer-juegos-elalto.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Juegos%20Familiares"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=El%20Alto,Talara,Peru">
+            <div class="ribbon-distrito ribbon-elalto">El Alto</div>
+            <h3>Día de Juegos Familiares</h3>
+            <p class="fecha">22 de noviembre de 2025</p>
+            <p class="descripcion-breve">Juegos tradicionales y actividades para niños y adultos en El Alto.</p>
+        </div>
+        <!-- Evento 25 -->
+        <div class="evento-card gastronómico" 
+             data-distrito="La Brea" 
+             data-categoria="Gastronómico" 
+             data-fecha="2025-11-29" 
+             data-id="25" 
+             data-title="Feria de Mariscos La Brea" 
+             data-descripcion="Degusta mariscos frescos en el Mercado Central de La Brea con música." 
+             data-image="assets/images/flyer-mariscos-labrea.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Feria%20Mariscos"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=La%20Brea,Talara,Peru">
+            <div class="ribbon-distrito ribbon-labrea">La Brea</div>
+            <h3>Feria de Mariscos La Brea</h3>
+            <p class="fecha">29 de noviembre de 2025</p>
+            <p class="descripcion-breve">Degusta mariscos frescos en el Mercado Central de La Brea con música.</p>
+        </div>
+        <!-- Evento 26 -->
+        <div class="evento-card musical" 
+             data-distrito="Pariñas" 
+             data-categoria="Musical" 
+             data-fecha="2025-12-06" 
+             data-id="26" 
+             data-title="Concierto Rock Talara" 
+             data-descripcion="Festival de rock con bandas emergentes en el Estadio de Pariñas." 
+             data-image="assets/images/flyer-rock-talara.webp" 
+             data-video="https://www.youtube.com/watch?v=SmM0653YvXU" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Concierto%20Rock" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-rock">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Concierto Rock Talara</h3>
+            <p class="fecha">6 de diciembre de 2025</p>
+            <p class="descripcion-breve">Festival de rock con bandas emergentes en el Estadio de Pariñas.</p>
+        </div>
+        <!-- Evento 27 -->
+        <div class="evento-card festival" 
+             data-distrito="Máncora" 
+             data-categoria="Festival" 
+             data-fecha="2025-12-13" 
+             data-id="27" 
+             data-title="Festival de Luces Máncora" 
+             data-descripcion="Espectáculo de luces, fuegos artificiales y actividades en Máncora." 
+             data-image="assets/images/flyer-luces-mancora.webp" 
+             data-video="https://www.youtube.com/watch?v=7Yv9r8Z6vZ0" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Festival%20Luces"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Máncora,Talara,Peru">
+            <div class="ribbon-distrito ribbon-mancora">Máncora</div>
+            <h3>Festival de Luces Máncora</h3>
+            <p class="fecha">13 de diciembre de 2025</p>
+            <p class="descripcion-breve">Espectáculo de luces, fuegos artificiales y actividades en Máncora.</p>
+        </div>
+        <!-- Evento 28 -->
+        <div class="evento-card deportivo" 
+             data-distrito="Máncora" 
+             data-categoria="Deportivo" 
+             data-fecha="2025-12-20" 
+             data-id="28" 
+             data-title="Carrera Costera Máncora" 
+             data-descripcion="Carrera de 10K a lo largo de la costa de Máncora con vistas espectaculares." 
+             data-image="assets/images/flyer-carrera-mancora.webp" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Carrera%20Costera" 
+             data-maps="https://maps.google.com/?q=Máncora,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-carrera-mancora">
+            <div class="ribbon-distrito ribbon-mancora">Máncora</div>
+            <h3>Carrera Costera Máncora</h3>
+            <p class="fecha">20 de diciembre de 2025</p>
+            <p class="descripcion-breve">Carrera de 10K a lo largo de la costa de Máncora con vistas espectaculares.</p>
+        </div>
+        <!-- Evento 29 -->
+        <div class="evento-card festival" 
+             data-distrito="Pariñas" 
+             data-categoria="Festival" 
+             data-fecha="2025-12-24" 
+             data-id="29" 
+             data-title="Noche de Luces en Pariñas" 
+             data-descripcion="Celebra la Nochebuena con luces, música y fuegos artificiales en Pariñas." 
+             data-image="assets/images/flyer-luces-parinas.webp" 
+             data-video="https://www.youtube.com/watch?v=8f2RoK76S4g" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Noche%20Luces"
+             data-premium="false" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Noche de Luces en Pariñas</h3>
+            <p class="fecha">24 de diciembre de 2025</p>
+            <p class="descripcion-breve">Celebra la Nochebuena con luces, música y fuegos artificiales en Pariñas.</p>
+        </div>
+        <!-- Evento 30 -->
+        <div class="evento-card festival" 
+             data-distrito="Pariñas" 
+             data-categoria="Festival" 
+             data-fecha="2025-12-31" 
+             data-id="30" 
+             data-title="Fiesta de Año Nuevo Talara" 
+             data-descripcion="Recibe el 2026 con concierto, quema de muñecos y fuegos artificiales." 
+             data-image="assets/images/flyer-ano-nuevo.webp" 
+             data-video="https://www.youtube.com/watch?v=AeGfWqTB4gA" 
+             data-whatsapp="https://wa.me/+51961360935?text=Info%20Año%20Nuevo" 
+             data-maps="https://maps.google.com/?q=Pariñas,Talara,Peru"
+             data-premium="false" 
+             data-tickets="https://example.com/entradas-ano-nuevo">
+            <div class="ribbon-distrito ribbon-parinas">Pariñas</div>
+            <h3>Fiesta de Año Nuevo Talara</h3>
+            <p class="fecha">31 de diciembre de 2025</p>
+            <p class="descripcion-breve">Recibe el 2026 con concierto, quema de muñecos y fuegos artificiales.</p>
+        </div>
+    </div>
 
     <!-- Modal de detalles del evento -->
     <div id="evento-modal" class="evento-modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">

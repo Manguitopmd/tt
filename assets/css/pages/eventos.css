@@ -130,10 +130,10 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
-    color: #facc15;
+    color: #ffffff;
     font-size: 0.875rem;
     font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: orange;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     z-index: 10;
@@ -368,13 +368,13 @@
     color: #ffffff;
 }
 
-.modal-content .botones .btn-entradas {
-    background-color: #ff6200;
+.modal-content .botones .btn-tickets {
+    background-color: #facc15;
     color: #ffffff;
 }
 
 .modal-content .botones .btn-comprar {
-    background-color: #22c55e;
+    background-color: #f97316;
     color: #ffffff;
 }
 

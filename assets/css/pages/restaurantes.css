@@ -1,0 +1,463 @@
+.restaurantes-container {
+    background-color: #1a1a1a;
+    min-height: calc(100vh - 3.5rem);
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: #1a1a1a;
+    padding-bottom: 1rem;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.search-bar input {
+    border: 1px solid #4b5563;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.search-bar input:focus {
+    border-color: #facc15;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.filter-btn {
+    background-color: #4b5563;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.filter-btn:hover {
+    background-color: #f59e0b;
+}
+
+.filter-btn i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.filter-modal {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.filter-modal.show {
+    opacity: 1;
+}
+
+.filter-modal .modal-content {
+    transform: scale(0.8);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.filter-modal.show .modal-content {
+    transform: scale(1);
+}
+
+.filter-modal .bg-black {
+    cursor: pointer;
+}
+
+.tipo-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tipo-options input[type="radio"] {
+    accent-color: #facc15;
+}
+
+.restaurantes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.acordeon {
+    background-color: #2d2521;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.acordeon[data-vendemas="true"] {
+    background: linear-gradient(135deg, #2d2521, #1e0d05);
+    border: 4px solid #facc15;
+    box-shadow: 0 8px 24px rgba(250, 204, 21, 0.6);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.acordeon[data-vendemas="true"]:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(250, 204, 21, 0.8);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.vendemas-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: linear-gradient(90deg, #2d2521, #2d2d2d);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: transform 0.2s ease;
+}
+
+.vendemas-badge:hover {
+    transform: scale(1.1);
+}
+
+.vendemas-plus {
+    color: #ff6200;
+    font-weight: 900;
+}
+
+.acordeon[data-tipo="Cevichería"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #00b7eb;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.acordeon[data-tipo="Comida Criolla"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #8b4513;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.acordeon[data-tipo="Pollería"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #ff4500;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.acordeon[data-tipo="Pizzería"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #800000;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.acordeon[data-tipo="Comida Nikkei"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #2e8b57;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.acordeon[data-tipo="Hamburguesería"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #d32f2f;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.acordeon:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+.acordeon-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.acordeon-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #facc15;
+    object-fit: cover;
+}
+
+.acordeon[data-vendemas="true"] .acordeon-logo {
+    border: 3px solid #facc15;
+    box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.acordeon-info {
+    flex: 1;
+}
+
+.acordeon-nombre {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.acordeon[data-vendemas="true"] .acordeon-nombre {
+    font-size: 1.35rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.acordeon-descripcion-breve {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+}
+
+.acordeon-direccion {
+    font-size: 0.75rem;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.acordeon-direccion i {
+    color: #ff6200;
+}
+
+.acordeon-flecha {
+    color: #facc15;
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.acordeon-flecha.active {
+    transform: rotate(180deg);
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 1rem;
+}
+
+.acordeon-contenido.active {
+    max-height: none;
+}
+
+.acordeon-imagen {
+    width: 100%;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid #f59e0b;
+}
+
+.acordeon[data-vendemas="true"] .acordeon-imagen {
+    border: 2px solid #facc15;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    max-height: 120px;
+}
+
+.acordeon-tipo {
+    font-size: 0.875rem;
+    color: #facc15;
+    margin-bottom: 0.5rem;
+}
+
+.acordeon-descripcion {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+}
+
+.acordeon-ubicacion,
+.acordeon-horario,
+.acordeon-telefono,
+.acordeon-web {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.acordeon-ubicacion a {
+    color: #facc15;
+    text-decoration: underline;
+}
+
+.acordeon-ubicacion i {
+    color: #ff6200;
+}
+
+.acordeon-horario i {
+    color: #ffc107;
+}
+
+.acordeon-telefono a {
+    color: #facc15;
+    text-decoration: underline;
+}
+
+.acordeon-telefono i {
+    color: #25d366;
+}
+
+.acordeon-web i {
+    color: #facc15;
+}
+
+.web-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #facc15, #f59e0b);
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.web-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.5);
+}
+
+.acordeon-platos {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+}
+
+.acordeon-platos li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.acordeon-platos li i {
+    color: #ffffff;
+}
+
+#cerrar-modal-tipo {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #facc15, #f59e0b);
+    color: #1a1a1a;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#cerrar-modal-tipo:hover {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+    .restaurantes-container {
+        padding: 0.75rem;
+    }
+    .acordeon-nombre {
+        font-size: 1.125rem;
+    }
+    .acordeon[data-vendemas="true"] .acordeon-nombre {
+        font-size: 1.25rem;
+    }
+    .filter-btn {
+        padding: 0.6rem;
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    .modal-content {
+        max-width: 90%;
+    }
+    .vendemas-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+        max-width: 80px;
+    }
+    .acordeon-imagen {
+        max-height: 80px;
+    }
+    .acordeon[data-vendemas="true"] .acordeon-imagen {
+        max-height: 100px;
+    }
+}
+
+@media (hover: hover) {
+    .acordeon:hover {
+        transform: translateY(-4px);
+    }
+    .filter-btn:hover {
+        background-color: #f59e0b;
+    }
+}

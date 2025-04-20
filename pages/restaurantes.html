@@ -1,0 +1,274 @@
+<div class="restaurantes-container bg-gray-900 min-h-screen p-4">
+    <div class="sticky-header">
+        <h1 class="text-3xl font-lobster text-center text-yellow-400 mb-2">Restaurantes en Talara</h1>
+        <p class="text-gray-400 text-center mb-4">Saborea lo mejor de Talara</p>
+        <div class="search-bar relative">
+            <input id="filtro-busqueda" type="text" placeholder="Busca un restaurante o comida" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-400 outline-none" aria-label="Buscar restaurantes por nombre, descripción, tipo o platos">
+            <i class="fas fa-search text-yellow-400 absolute right-3 top-2.5"></i>
+        </div>
+        <div class="filter-buttons flex justify-center gap-2 py-2">
+            <button id="filtro-tipo" class="filter-btn bg-gray-700 text-white px-3 py-1 rounded" aria-label="Filtrar por tipo"><i class="fas fa-utensils"></i></button>
+            <button id="borrar-filtros" class="filter-btn bg-gray-700 text-white px-3 py-1 rounded" aria-label="Borrar filtros"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+    <div id="restaurantes-lista" class="restaurantes-lista flex flex-col gap-3" aria-live="polite">
+        <!-- Restaurante 1: El Sabor Marino -->
+        <div class="acordeon cevicheria" 
+             data-id="1" 
+             data-tipo="Cevichería" 
+             data-experiencia="Exclusiva" 
+             data-title="El Sabor Marino" 
+             data-descripcion-breve="Ceviches frescos con vista al mar" 
+             data-descripcion="Ceviches frescos con ingredientes locales, ideal para familias con vista al mar." 
+             data-ubicacion="Av. Grau 123, Talara" 
+             data-maps="https://maps.google.com/?q=Av.+Grau+123,Talara" 
+             data-horario="Lun-Dom, 12:00-22:00" 
+             data-whatsapp="https://wa.me/+51987654321" 
+             data-platos="Ceviche mixto,Arroz con mariscos" 
+             data-vendemas="true" 
+             data-web="https://example.com/el-sabor-marino" 
+             data-lat="-4.5772" 
+             data-lon="-81.2714">
+            <div class="acordeon-header">
+                <img class="acordeon-logo" src="assets/img/restaurantes/el-sabor-marino-logo.webp" alt="Logo El Sabor Marino" loading="lazy">
+                <div class="acordeon-info">
+                    <h3 class="acordeon-nombre">El Sabor Marino</h3>
+                    <p class="acordeon-descripcion-breve">Ceviches frescos con vista al mar</p>
+                    <p class="acordeon-direccion"><i class="fas fa-map-marker-alt"></i> Av. Grau 123, Talara</p>
+                </div>
+                <i class="fas fa-chevron-down acordeon-flecha"></i>
+                <span class="vendemas-badge">Vende <span class="vendemas-plus">+</span></span>
+            </div>
+            <div class="acordeon-contenido">
+                <img class="acordeon-imagen" src="assets/img/restaurantes/el-sabor-marino-plato.webp" alt="El Sabor Marino" loading="lazy">
+                <p class="acordeon-tipo">Cevichería</p>
+                <p class="acordeon-descripcion">Ceviches frescos con ingredientes locales, ideal para familias con vista al mar.</p>
+                <p class="acordeon-ubicacion"><i class="fas fa-map-marked-alt"></i> <a href="https://maps.google.com/?q=Av.+Grau+123,Talara" target="_blank">Av. Grau 123, Talara</a></p>
+                <p class="acordeon-horario"><i class="fas fa-clock"></i> Lun-Dom, 12:00-22:00</p>
+                <p class="acordeon-telefono"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+51987654321" target="_blank">Contactar por WhatsApp</a></p>
+                <p class="acordeon-web"><i class="fas fa-globe"></i> <a href="https://example.com/el-sabor-marino" target="_blank" class="web-btn">Visitar El Sabor Marino App</a></p>
+                <ul class="acordeon-platos">
+                    <li><i class="fas fa-utensils"></i> Ceviche mixto</li>
+                    <li><i class="fas fa-utensils"></i> Arroz con mariscos</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Restaurante 2: La Parrillita -->
+        <div class="acordeon comida-criolla" 
+             data-id="2" 
+             data-tipo="Comida Criolla" 
+             data-experiencia="Familiar" 
+             data-title="La Parrillita" 
+             data-descripcion-breve="Carnes a la parrilla y platos peruanos" 
+             data-descripcion="Carnes a la parrilla y platos tradicionales peruanos en un ambiente acogedor." 
+             data-ubicacion="Calle Lima 456, Talara" 
+             data-maps="https://maps.google.com/?q=Calle+Lima+456,Talara" 
+             data-horario="Mar-Sáb, 13:00-23:00" 
+             data-whatsapp="https://wa.me/+51912345678" 
+             data-platos="Lomo saltado,Pollo a la brasa" 
+             data-vendemas="false" 
+             data-lat="-4.5790" 
+             data-lon="-81.2690">
+            <div class="acordeon-header">
+                <img class="acordeon-logo" src="assets/img/restaurantes/la-parrillita-logo.webp" alt="Logo La Parrillita" loading="lazy">
+                <div class="acordeon-info">
+                    <h3 class="acordeon-nombre">La Parrillita</h3>
+                    <p class="acordeon-descripcion-breve">Carnes a la parrilla y platos peruanos</p>
+                    <p class="acordeon-direccion"><i class="fas fa-map-marker-alt"></i> Calle Lima 456, Talara</p>
+                </div>
+                <i class="fas fa-chevron-down acordeon-flecha"></i>
+            </div>
+            <div class="acordeon-contenido">
+                <img class="acordeon-imagen" src="assets/img/restaurantes/la-parrillita-plato.webp" alt="La Parrillita" loading="lazy">
+                <p class="acordeon-tipo">Comida Criolla</p>
+                <p class="acordeon-descripcion">Carnes a la parrilla y platos tradicionales peruanos en un ambiente acogedor.</p>
+                <p class="acordeon-ubicacion"><i class="fas fa-map-marked-alt"></i> <a href="https://maps.google.com/?q=Calle+Lima+456,Talara" target="_blank">Calle Lima 456, Talara</a></p>
+                <p class="acordeon-horario"><i class="fas fa-clock"></i> Mar-Sáb, 13:00-23:00</p>
+                <p class="acordeon-telefono"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+51912345678" target="_blank">Contactar por WhatsApp</a></p>
+                <ul class="acordeon-platos">
+                    <li><i class="fas fa-utensils"></i> Lomo saltado</li>
+                    <li><i class="fas fa-utensils"></i> Pollo a la brasa</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Restaurante 3: Pizza Talara -->
+        <div class="acordeon pizzeria" 
+             data-id="3" 
+             data-tipo="Pizzería" 
+             data-experiencia="Casual" 
+             data-title="Pizza Talara" 
+             data-descripcion-breve="Pizzas artesanales al horno" 
+             data-descripcion="Pizzas artesanales con ingredientes frescos, perfectas para compartir." 
+             data-ubicacion="Jr. San Martín 789, Talara" 
+             data-maps="https://maps.google.com/?q=Jr.+San+Martín+789,Talara" 
+             data-horario="Mié-Dom, 17:00-23:00" 
+             data-whatsapp="https://wa.me/+51923456789" 
+             data-platos="Pizza margarita,Pizza cuatro quesos" 
+             data-vendemas="false" 
+             data-lat="-4.5750" 
+             data-lon="-81.2730">
+            <div class="acordeon-header">
+                <img class="acordeon-logo" src="assets/img/restaurantes/pizza-talara-logo.webp" alt="Logo Pizza Talara" loading="lazy">
+                <div class="acordeon-info">
+                    <h3 class="acordeon-nombre">Pizza Talara</h3>
+                    <p class="acordeon-descripcion-breve">Pizzas artesanales al horno</p>
+                    <p class="acordeon-direccion"><i class="fas fa-map-marker-alt"></i> Jr. San Martín 789, Talara</p>
+                </div>
+                <i class="fas fa-chevron-down acordeon-flecha"></i>
+            </div>
+            <div class="acordeon-contenido">
+                <img class="acordeon-imagen" src="assets/img/restaurantes/pizza-talara-plato.webp" alt="Pizza Talara" loading="lazy">
+                <p class="acordeon-tipo">Pizzería</p>
+                <p class="acordeon-descripcion">Pizzas artesanales con ingredientes frescos, perfectas para compartir.</p>
+                <p class="acordeon-ubicacion"><i class="fas fa-map-marked-alt"></i> <a href="https://maps.google.com/?q=Jr.+San+Martín+789,Talara" target="_blank">Jr. San Martín 789, Talara</a></p>
+                <p class="acordeon-horario"><i class="fas fa-clock"></i> Mié-Dom, 17:00-23:00</p>
+                <p class="acordeon-telefono"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+51923456789" target="_blank">Contactar por WhatsApp</a></p>
+                <ul class="acordeon-platos">
+                    <li><i class="fas fa-utensils"></i> Pizza margarita</li>
+                    <li><i class="fas fa-utensils"></i> Pizza cuatro quesos</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Restaurante 4: Pollo al Carbón -->
+        <div class="acordeon polleria" 
+             data-id="4" 
+             data-tipo="Pollería" 
+             data-experiencia="Casual" 
+             data-title="Pollo al Carbón" 
+             data-descripcion-breve="Pollo a la brasa jugoso" 
+             data-descripcion="Pollo a la brasa con papas fritas y ensaladas, en un ambiente familiar." 
+             data-ubicacion="Av. Bolognesi 234, Talara" 
+             data-maps="https://maps.google.com/?q=Av.+Bolognesi+234,Talara" 
+             data-horario="Lun-Sáb, 12:00-22:00" 
+             data-whatsapp="https://wa.me/+51934567890" 
+             data-platos="Pollo a la brasa,Chaufa de pollo" 
+             data-vendemas="false" 
+             data-lat="-4.5800" 
+             data-lon="-81.2700">
+            <div class="acordeon-header">
+                <img class="acordeon-logo" src="assets/img/restaurantes/pollo-al-carbon-logo.webp" alt="Logo Pollo al Carbón" loading="lazy">
+                <div class="acordeon-info">
+                    <h3 class="acordeon-nombre">Pollo al Carbón</h3>
+                    <p class="acordeon-descripcion-breve">Pollo a la brasa jugoso</p>
+                    <p class="acordeon-direccion"><i class="fas fa-map-marker-alt"></i> Av. Bolognesi 234, Talara</p>
+                </div>
+                <i class="fas fa-chevron-down acordeon-flecha"></i>
+            </div>
+            <div class="acordeon-contenido">
+                <img class="acordeon-imagen" src="assets/img/restaurantes/pollo-al-carbon-plato.webp" alt="Pollo al Carbón" loading="lazy">
+                <p class="acordeon-tipo">Pollería</p>
+                <p class="acordeon-descripcion">Pollo a la brasa con papas fritas y ensaladas, en un ambiente familiar.</p>
+                <p class="acordeon-ubicacion"><i class="fas fa-map-marked-alt"></i> <a href="https://maps.google.com/?q=Av.+Bolognesi+234,Talara" target="_blank">Av. Bolognesi 234, Talara</a></p>
+                <p class="acordeon-horario"><i class="fas fa-clock"></i> Lun-Sáb, 12:00-22:00</p>
+                <p class="acordeon-telefono"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+51934567890" target="_blank">Contactar por WhatsApp</a></p>
+                <ul class="acordeon-platos">
+                    <li><i class="fas fa-utensils"></i> Pollo a la brasa</li>
+                    <li><i class="fas fa-utensils"></i> Chaufa de pollo</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Restaurante 5: Nikkei Talara -->
+        <div class="acordeon comida-nikkei" 
+             data-id="5" 
+             data-tipo="Comida Nikkei" 
+             data-experiencia="Exclusiva" 
+             data-title="Nikkei Talara" 
+             data-descripcion-breve="Fusión peruano-japonesa" 
+             data-descripcion="Platos nikkei con sabores únicos, combinando lo mejor de Perú y Japón." 
+             data-ubicacion="Calle Arequipa 567, Talara" 
+             data-maps="https://maps.google.com/?q=Calle+Arequipa+567,Talara" 
+             data-horario="Mar-Dom, 13:00-21:00" 
+             data-whatsapp="https://wa.me/+51945678901" 
+             data-platos="Maki acevichado,Tiradito nikkei" 
+             data-vendemas="false" 
+             data-lat="-4.5760" 
+             data-lon="-81.2720">
+            <div class="acordeon-header">
+                <img class="acordeon-logo" src="assets/img/restaurantes/nikkei-talara-logo.webp" alt="Logo Nikkei Talara" loading="lazy">
+                <div class="acordeon-info">
+                    <h3 class="acordeon-nombre">Nikkei Talara</h3>
+                    <p class="acordeon-descripcion-breve">Fusión peruano-japonesa</p>
+                    <p class="acordeon-direccion"><i class="fas fa-map-marker-alt"></i> Calle Arequipa 567, Talara</p>
+                </div>
+                <i class="fas fa-chevron-down acordeon-flecha"></i>
+            </div>
+            <div class="acordeon-contenido">
+                <img class="acordeon-imagen" src="assets/img/restaurantes/nikkei-talara-plato.webp" alt="Nikkei Talara" loading="lazy">
+                <p class="acordeon-tipo">Comida Nikkei</p>
+                <p class="acordeon-descripcion">Platos nikkei con sabores únicos, combinando lo mejor de Perú y Japón.</p>
+                <p class="acordeon-ubicacion"><i class="fas fa-map-marked-alt"></i> <a href="https://maps.google.com/?q=Calle+Arequipa+567,Talara" target="_blank">Calle Arequipa 567, Talara</a></p>
+                <p class="acordeon-horario"><i class="fas fa-clock"></i> Mar-Dom, 13:00-21:00</p>
+                <p class="acordeon-telefono"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+51945678901" target="_blank">Contactar por WhatsApp</a></p>
+                <ul class="acordeon-platos">
+                    <li><i class="fas fa-utensils"></i> Maki acevichado</li>
+                    <li><i class="fas fa-utensils"></i> Tiradito nikkei</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Restaurante 6: King Burger -->
+        <div class="acordeon hamburgueseria" 
+             data-id="6" 
+             data-tipo="Hamburguesería" 
+             data-experiencia="Casual" 
+             data-title="Bonanza Burger" 
+             data-descripcion-breve="Hamburguesas gourmet con ingredientes frescos" 
+             data-descripcion="Disfruta de hamburguesas gourmet con carne jugosa y salsas únicas en un ambiente moderno." 
+             data-ubicacion="Av. Talara 890, Talara" 
+             data-maps="https://maps.google.com/?q=Av.+Talara+890,Talara" 
+             data-horario="Lun-Dom, 16:00-23:00" 
+             data-whatsapp="https://wa.me/+51956789012" 
+             data-platos="Hamburguesa clásica,Papas fritas con queso" 
+             data-vendemas="true" 
+             data-web="https://manguitopmd.github.io/demo_burger/" 
+             data-lat="-4.5780" 
+             data-lon="-81.2705">
+            <div class="acordeon-header">
+                <img class="acordeon-logo" src="assets/img/restaurantes/king-burger-logo.webp" alt="Logo King Burger" loading="lazy">
+                <div class="acordeon-info">
+                    <h3 class="acordeon-nombre">Bonanza Burger</h3>
+                    <p class="acordeon-descripcion-breve">Hamburguesas gourmet con ingredientes frescos</p>
+                    <p class="acordeon-direccion"><i class="fas fa-map-marker-alt"></i> Av. Talara 890, Talara</p>
+                </div>
+                <i class="fas fa-chevron-down acordeon-flecha"></i>
+                <span class="vendemas-badge">Vende <span class="vendemas-plus">+</span></span>
+            </div>
+            <div class="acordeon-contenido">
+                <img class="acordeon-imagen" src="assets/img/restaurantes/king-burger-plato.webp" alt="King Burger" loading="lazy">
+                <p class="acordeon-tipo">Hamburguesería</p>
+                <p class="acordeon-descripcion">Disfruta de hamburguesas gourmet con carne jugosa y salsas únicas en un ambiente moderno.</p>
+                <p class="acordeon-ubicacion"><i class="fas fa-map-marked-alt"></i> <a href="https://maps.google.com/?q=Av.+Talara+890,Talara" target="_blank">Av. Talara 890, Talara</a></p>
+                <p class="acordeon-horario"><i class="fas fa-clock"></i> Lun-Dom, 16:00-23:00</p>
+                <p class="acordeon-telefono"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+51956789012" target="_blank">Contactar por WhatsApp</a></p>
+                <p class="acordeon-web"><i class="fas fa-globe"></i> <a href="https://manguitopmd.github.io/demo_burger/" target="_blank" class="web-btn">Visitar King Burger App</a></p>
+                <ul class="acordeon-platos">
+                    <li><i class="fas fa-utensils"></i> Hamburguesa clásica</li>
+                    <li><i class="fas fa-utensils"></i> Papas fritas con queso</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para filtro de tipo -->
+    <div id="modal-tipo" class="filter-modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="modal-content bg-gray-800 p-4 rounded-lg max-w-sm w-full">
+            <h2 class="text-white text-lg font-semibold mb-4">Filtrar por tipo</h2>
+            <div class="tipo-options flex flex-col gap-2">
+                <label class="text-gray-300"><input type="radio" name="tipo" value="todos" checked> Todos</label>
+                <label class="text-gray-300"><input type="radio" name="tipo" value="Cevichería"> Cevicherías</label>
+                <label class="text-gray-300"><input type="radio" name="tipo" value="Comida Criolla"> Comida Criolla</label>
+                <label class="text-gray-300"><input type="radio" name="tipo" value="Pollería"> Pollerías</label>
+                <label class="text-gray-300"><input type="radio" name="tipo" value="Pizzería"> Pizzerías</label>
+                <label class="text-gray-300"><input type="radio" name="tipo" value="Comida Nikkei"> Comida Nikkei</label>
+                <label class="text-gray-300"><input type="radio" name="tipo" value="Hamburguesería"> Hamburgueserías</label>
+            </div>
+            <div class="flex justify-end gap-2 mt-4">
+                <button id="cerrar-modal-tipo" class="text-gray-400 hover:text-yellow-400">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-40">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-yellow-400"></div>
+    </div>
+</div>

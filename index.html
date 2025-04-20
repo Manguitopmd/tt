@@ -12,8 +12,8 @@
 </head>
 <body class="font-poppins text-gray-900 overflow-x-hidden">
     <!-- Loader -->
-    <div id="loader" class="loader fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-        <img src="assets/img/logo.svg" alt="Cargando Travel Talara" class="loader-logo w-20 h-20">
+    <div id="loader" class="loader fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 transition-opacity duration-300 opacity-100 hidden" aria-label="Cargando Travel Talara">
+        <img src="assets/img/logo.svg" alt="Cargando Travel Talara" class="loader-logo w-20 h-20 animate-pulse">
     </div>
 
     <div class="top-bar fixed top-0 left-0 w-full h-14 bg-black flex items-center justify-center shadow-md z-10">
@@ -38,30 +38,6 @@
 
     <script src="assets/js/scripts.js"></script>
     <script>
-        // Cargar el menú desde menu.html al iniciar
-        document.addEventListener('DOMContentLoaded', () => {
-            const loader = document.getElementById('loader');
-            loader.style.display = 'flex';
-            fetch('includes/menu.html')
-                .then(response => {
-                    if (!response.ok) throw new Error(`Error al cargar menu.html: ${response.status} ${response.statusText}`);
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('mySidenav').innerHTML = data;
-                    loader.style.display = 'none';
-                    // Cargar página inicial
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const page = urlParams.get('page') || 'home';
-                    loadPage(page);
-                })
-                .catch(error => {
-                    console.error('Error al cargar el menú:', error);
-                    document.getElementById('mySidenav').innerHTML = `<p>Error al cargar el menú: ${error.message}</p>`;
-                    loader.style.display = 'none';
-                });
-        });
-
         // Deshabilitar clic derecho
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>

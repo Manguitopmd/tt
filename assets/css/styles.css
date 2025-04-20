@@ -12,24 +12,24 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 26, 26, 0.8); /* Gris oscuro semitransparente */
-    display: none; /* Oculto por defecto */
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.loader.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .loader-logo {
-    width: 80px; /* Tamaño para móviles */
+    width: 80px; /* Tamaño fijo como en index.html */
     height: 80px;
-    animation: spin 1s linear infinite; /* Giro continuo */
-}
-
-@media (min-width: 768px) {
-    .loader-logo {
-        width: 120px; /* Tamaño para escritorio */
-        height: 120px;
-    }
+    animation: spin 1s linear infinite; /* Mantener giro */
 }
 
 /* Animación de giro */
@@ -222,4 +222,23 @@ body {
 
 .sidenav[style*="width"] + .main-container {
     margin-left: calc(80vw);
+}
+
+/* Fondo oscuro para cerrar la barra lateral */
+.sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 14;
+}
+
+.sidenav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
 }
